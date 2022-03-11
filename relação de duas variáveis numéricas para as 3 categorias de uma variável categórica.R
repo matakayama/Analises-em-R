@@ -1,15 +1,15 @@
 # Mini-Projeto 2
 
-# Limpeza e TransformaÁ„o de Dados com Power Query e Linguagem R
+# Limpeza e Transforma√ß√£o de Dados com Power Query e Linguagem R
 
 # Definindo a pasta de trabalho
 setwd("C:/Users/marina.takayama1/Desktop/Cap12")
 getwd()
 
-# InstalaÁ„o dos pacotes
-install.packages("dplyr") # ManipulaÁ„o de Dados
-install.packages("data.table") # TransformaÁ„o de Dados
-install.packages("ggplot2") # Gr·ficos
+# Instala√ß√£o dos pacotes
+install.packages("dplyr") # Manipula√ß√£o de Dados
+install.packages("data.table") # Transforma√ß√£o de Dados
+install.packages("ggplot2") # Gr√°ficos
 
 # Carregando os pacotes
 library(dplyr)
@@ -20,7 +20,7 @@ library(ggplot2)
 dados_iris <- iris
 View(dados_iris)
 
-# Sumarizando as mÈdias de cada coluna
+# Sumarizando as m√©dias de cada coluna
 medias_iris <- summarize(group_by(dados_iris, Species),
                          media_sepal_length = mean(Sepal.Length),
                          media_sepal_width = mean(Sepal.Width),
@@ -37,13 +37,13 @@ dados_iris_id$Petal.Length <- as.integer(dados_iris_id$Petal.Length)
 dados_iris_id$Petal.Width <- as.integer(dados_iris_id$Petal.Width)
 View(dados_iris_id)
 
-# Gr·fico com a relaÁ„o de duas vari·veis numÈricas para as 3 categorias de uma vari·vel categÛrica
+# Gr√°fico com a rela√ß√£o de duas vari√°veis num√©ricas para as 3 categorias de uma vari√°vel categ√≥rica
 ggplot(data = dados_iris, aes(x = Petal.Width, y = Petal.Length)) +
   geom_point(aes(color = Species), size = 3) +
-  ggtitle("Largura e Comprimento das PÈtalas") +
-  labs(x = "Largura da PÈtala",
-       y = "Comprimento da PÈtala") +
+  ggtitle("Largura e Comprimento das P√©talas") +
+  labs(x = "Largura da P√©tala",
+       y = "Comprimento da P√©tala") +
   theme_bw() +
   theme(title = element_text(size = 15, color = "turquoise4"))
 
-# FunÁ„o para executar no Power Bi
+# Fun√ß√£o para executar no Power Bi
