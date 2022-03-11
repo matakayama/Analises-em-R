@@ -1,29 +1,29 @@
-# Estatística Básica
+# EstatÃ­stica BÃ¡sica
 
 # Desafio 01
 
-# Função para definir a pasta de trabalho
+# FunÃ§Ã£o para definir a pasta de trabalho
 setwd("C:/Users/marina.takayama1/Desktop/Cap12")
 getwd()
 
-# Função para ler o arquivo
+# FunÃ§Ã£o para ler o arquivo
 Notas <- read.csv("Notas.csv", fileEncoding = "windows-1252")
 
-# Resumo do tipo de dados e estatísticas
+# Resumo do tipo de dados e estatÃ­sticas
 View(Notas)
 str(Notas)
 summary(Notas)
 summary(Notas[c('TurmaA','TurmaB')])
 
-# Cálculo das Médias
+# CÃ¡lculo das MÃ©dias
 mean(Notas$TurmaA)
 mean(Notas$TurmaB)
 
-# Cálculo dos Desvios Padrões
+# CÃ¡lculo dos Desvios PadrÃµes
 sd(Notas$TurmaA)
 sd(Notas$TurmaB)
 
-# Função de Coeficiente de Variação
+# FunÃ§Ã£o de Coeficiente de VariaÃ§Ã£o
 media_ta <- mean(Notas$TurmaA)
 media_tb <- mean(Notas$TurmaB)
 
@@ -36,7 +36,7 @@ cvB <- sd_tb/media_tb*100
 cvA
 cvB
 
-# Função para Moda
+# FunÃ§Ã£o para Moda
 moda <- function(x) {
   valor_unico <- unique (x)
   valor_unico [which.max(tabulate(match(x,valor_unico)))]
